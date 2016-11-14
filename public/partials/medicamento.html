@@ -1,0 +1,22 @@
+<div class="jumbotron">
+	<h2 class="text-center">
+		Medicamento Detail
+	</h2>
+</div>
+
+<p ng-show="message.text" class="alert alert-success">
+	<strong>{{message.text}} !</strong> Medicamento was saved.
+</p>
+
+<form ng-submit="save()">
+	<div class="form-group">
+		<input placeholder="Nome" type="text" name="nome" class="form-control" ng-model="medicamento.nome">
+	</div>
+	<div class="form-group">
+		<input placeholder="Fabricante" type="text" name="fabricante" class="form-control" ng-model="medicamento.fabricante">
+	</div>
+	<div>
+		<button type="submit" class="btn btn-primary">Save</button>
+		<a href="#/" class="btn btn-default">Back</a>
+	</div>
+</form>

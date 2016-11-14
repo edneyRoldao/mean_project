@@ -1,0 +1,31 @@
+<div class="jumbotron">
+	<h3 class="text-center">
+		Welcome to My pharmaco App
+	</h3>
+</div>
+
+<p ng-show="message.text">{{message.text}}</p>
+
+<a class="btn btn-primary" ng-href="#/medicamento"> NEW </a>
+
+<input style="margin-top: 8px;margin-bottom: 8px;" class="form-control" ng-model="medNameFilter" placeholder="filter by name">
+
+<p ng-show="medicamentos.length">Medicamentos registered: {{medicamentos.length}}</p>
+<p ng-hide="medicamentos.length" class="text-info">There is no medicamento in a list</p>
+
+<div class="table-responsive">
+	<table class="table table-hover">
+		<tr>
+			<th>NOME</th>
+			<th>FABRICANTE</th>
+			<th class="text-center">ACTION</th>
+		</tr>
+		<tr ng-repeat="medicamento in medicamentos | filter: medNameFilter">
+			<td> <a ng-href="#/medicamento/{{medicamento._id}}">{{medicamento.nome}}</a> </td>
+			<td>{{medicamento.fabricante}}</td>
+			<td class="text-center">
+				<button class="btn btn-warning" ng-click="remove(medicamento)">Remove</button>
+			</td>
+		</tr>
+	</table>
+</div>

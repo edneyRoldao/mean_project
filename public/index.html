@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myPharmaco">
+	<head>
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css">
+		<style type="text/css">
+			.jumbotron {
+				margin-top: 5px;
+			}
+		</style>
+		<title>My Pharmaco App</title>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular-route/angular-route.js"></script>
+		<script src="lib/angular-resource/angular-resource.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/services/MedicamentoService.js"></script>
+		<script src="js/controllers/MedicamentosController.js"></script>
+		<script src="js/controllers/MedicamentoController.js"></script>
+	</head>
+	<body class="container">
+		<div ng-view></div>
+	</body>
+</html>

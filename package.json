@@ -1,0 +1,27 @@
+{
+  "name": "mean_project",
+  "version": "1.0.0",
+  "description": "mean fullstack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edneyRoldao/mean_project.git"
+  },
+  "author": "edney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edneyRoldao/mean_project/issues"
+  },
+  "homepage": "https://github.com/edneyRoldao/mean_project#readme",
+  "dependencies": {
+    "body-parser": "^1.6.7",
+    "express": "^4.8.8",
+    "express-load": "^1.1.15",
+    "method-override": "^2.1.3",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.6"
+  }
+}
