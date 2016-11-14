@@ -15,5 +15,9 @@ angular.module("myPharmaco", ["ngRoute", "ngResource"]).config(function($routePr
 		controller: "MedicamentoController"
 	});
 
+	$routeProvider.when("/auth", {
+		templateUrl: "partials/auth.html",
+	});
+
 	$routeProvider.otherwise( {redirectTo: "/medicamentos"} );
 });

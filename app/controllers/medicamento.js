@@ -1,3 +1,5 @@
+var sanitize = require("mongo-sanitize");
+
 module.exports = function(app) {
 
 	var controller = {};
@@ -32,7 +34,7 @@ module.exports = function(app) {
 
 	// Remove medicamentos
 	controller.medicamentoRemove = function(req, res) {
-		var _id = req.params.id;
+		var _id = sanitize(req.params.id);
 		var promise = Medicamento.remove({"_id": _id}).exec();
 		var success = function() {res.status(204).end();};
 		var errors = function(error) {return console.error(error);};
@@ -43,17 +45,23 @@ module.exports = function(app) {
 	// Add a medicine
 	controller.saveMedicamento = function(req, res) {
 		var _id = req.body._id;
+
+		var data = {
+			"nome": req.body.nome,
+			"fabricante": req.body.fabricante
+		};
+
 		var errors = function(error) {
 			console.log(error);
 			res.status(500).json(error);
 		};
 
 		if(_id) {
-			var promise = Medicamento.findByIdAndUpdate(_id, req.body).exec();
+			var promise = Medicamento.findByIdAndUpdate(_id, data).exec();
 			var success = function(med) { res.json(med); };
 			promise.then(success, errors);
 		}else {
-			var promise = Medicamento.create(req.body);
+			var promise = Medicamento.create(data);
 			var success = function(med) { res.status(201).json(med); };
 			promise.then(success, errors);
 		}
