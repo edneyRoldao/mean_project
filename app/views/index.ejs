@@ -2,14 +2,20 @@
 <html ng-app="myPharmaco">
 	<head>
 		<meta charset="utf-8">
+
+		<!-- build:css css/index.min.css -->
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css">
+		<!-- endbuild -->
+
 		<style type="text/css">
 			.jumbotron {
 				margin-top: 5px;
 			}
 		</style>
 		<title>My Pharmaco App</title>
+
+		<!-- build:js js/index.min.js -->
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular-route/angular-route.js"></script>
 		<script src="lib/angular-resource/angular-resource.js"></script>
@@ -19,6 +25,8 @@
 		<script src="js/controllers/MedicamentoController.js"></script>
 		<script src="js/config/interceptorsConfig.js"></script>
 		<script src="js/interceptors/UnauthorisedInterceptor.js"></script>
+		<!-- endbuild -->
+
 	</head>
 	<body class="container">
 		
