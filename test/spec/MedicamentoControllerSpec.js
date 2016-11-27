@@ -8,7 +8,8 @@ describe("MedicamentoController", function() {
 		inject(function($injector, _$httpBackend_) {
 			$scope = $injector.get("$rootScope").$new();
 			$httpBackend = _$httpBackend_;
-			$httpBackend.when("GET", "/medicamento/1").respond({_id: "1"});
+			$httpBackend.when("GET", "/medicamentos/1").respond({_id: "1"});
+			$httpBackend.when("GET", "/medicamentos").respond([{}]);
 		});
 	});
 
@@ -23,6 +24,7 @@ describe("MedicamentoController", function() {
 			"$scope": $scope
 		});
 
+		$httpBackend.flush();
 		expect($scope.medicamento._id).toBeDefined();
 	}));	
 
