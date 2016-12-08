@@ -20,11 +20,11 @@
 			<th>FABRICANTE</th>
 			<th class="text-center">ACTION</th>
 		</tr>
-		<tr ng-repeat="medicamento in medicamentos | filter: medNameFilter">
-			<td> <a ng-href="#/medicamento/{{medicamento._id}}">{{medicamento.nome}}</a> </td>
-			<td>{{medicamento.fabricante}}</td>
+		<tr ng-repeat="med in medicamentos | filter: medNameFilter">
+			<td> <a ng-href="#/medicamento/{{med._id}}">{{med.nome}}</a> </td>
+			<td>{{med.fabricante}}</td>
 			<td class="text-center">
-				<button class="btn btn-warning" ng-click="remove(medicamento)">Remove</button>
+				<button class="btn btn-warning" ng-click="remove(med)">Remove</button>
 			</td>
 		</tr>
 	</table>

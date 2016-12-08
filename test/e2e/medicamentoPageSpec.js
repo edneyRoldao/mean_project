@@ -1,7 +1,10 @@
+var MedicamentoPage = require("./pages/medicamentoPage.js");
+
 describe("Insert Medicamento", function() {
+	var pageInfo = new MedicamentoPage();
 
 	beforeEach(function() {
-		browser.get("http://localhost:3000/#/medicamento");
+		pageInfo.visit();
 	});
 
 	it("Must to insert a medicamento", function() {
@@ -9,11 +12,11 @@ describe("Insert Medicamento", function() {
 		var name = "nameTest" + random;
 		var factory = "factoryTest" + random;
 
-		element(by.model("medicamento.nome")).sendKeys(name);
-		element(by.model("medicamento.fabricante")).sendKeys(factory);
-		element(by.css(".btn-primary")).click();
+		pageInfo.typeName(name);
+		pageInfo.typeFactory(factory);
+		pageInfo.save();
 
-		expect(element(by.binding("message.text")).getText()).toContain("Success");
+		expect(pageInfo.getMessage()).toContain("Success");
 	});
 
 });
