@@ -15,8 +15,6 @@ before_install:
   - npm install -g grunt-cli@0.1.13
   - npm install -g karma-cli@0.0.4
   - npm install -g protractor@4.0.11
-  - webdriver-manager clean
-  - webdriver-manager update
   - bower install
 before_script:
   - node test/data.js
